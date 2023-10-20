@@ -6,11 +6,11 @@
 		}
 	},
 	"devDependencies": {
-		"@html-eslint/eslint-plugin": "0.19.1",
-		"@html-eslint/parser": "0.19.1",
+		"@html-eslint/eslint-plugin": "0.20.0",
+		"@html-eslint/parser": "0.20.0",
 		"@tsconfig/node20": "20.1.2",
 		"@tsconfig/strictest": "2.0.2",
-		"@types/eslint": "8.44.5",
+		"@types/eslint": "8.44.6",
 		"@types/eslint-config-prettier": "6.11.2",
 		"@types/eslint__js": "8.42.2",
 		"@typescript-eslint/eslint-plugin": "^6.8.0",
@@ -22,7 +22,7 @@
 		"prettier": "3.0.3",
 		"terser": "^5.22.0",
 		"typescript": "5.2.2",
-		"vite": "4.4.11"
+		"vite": "4.5.0"
 	},
 	"type": "module",
 	"packageManager": "pnpm@8.9.2",
