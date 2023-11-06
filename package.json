@@ -13,14 +13,14 @@
 		"@types/eslint": "8.44.6",
 		"@types/eslint-config-prettier": "6.11.2",
 		"@types/eslint__js": "8.42.2",
-		"@typescript-eslint/eslint-plugin": "^6.9.0",
-		"@typescript-eslint/parser": "^6.9.0",
-		"eslint": "^8.52.0",
+		"@typescript-eslint/eslint-plugin": "^6.9.1",
+		"@typescript-eslint/parser": "^6.9.1",
+		"eslint": "^8.53.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-markdown": "3.0.1",
 		"eslint-plugin-yml": "1.10.0",
 		"prettier": "3.0.3",
-		"terser": "^5.22.0",
+		"terser": "^5.24.0",
 		"typescript": "5.2.2",
 		"vite": "4.5.0"
 	},
@@ -28,7 +28,7 @@
 		"@base2/pretty-print-object": "1.0.2"
 	},
 	"type": "module",
-	"packageManager": "pnpm@8.9.2",
+	"packageManager": "pnpm@8.10.2",
 	"scripts": {
 		"build": "vite build"
 	}
