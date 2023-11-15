@@ -1,5 +1,3 @@
-import { prettyPrint } from '@base2/pretty-print-object';
-
 /**
  * Converts camel name to khebab name.
  *
@@ -54,38 +52,12 @@ export const jsonParseWithBigint = (u: string, bigIntMark = 'n') =>
 	}) as unknown;
 
 /**
- * Adds a tab at the beginning of each new line in string s using lineSep as line separator
+ * Adds a tab at the beginning of each new line in string using lineSep as line separator
  *
  * @param s The string to tabify
  *
  */
 export const tabify = (s: string) => '\t' + s.replaceAll(/\n/g, '\n\t');
-
-/**
- * Pretty print an abject. Uses \n as newline character
- *
- * @param u The object to print
- *
- */
-
-export const objectToString = (u: unknown) => {
-	switch (typeof u) {
-		case 'string':
-			return u;
-		case 'boolean':
-		case 'bigint':
-		case 'symbol':
-			return u.toString();
-		case 'function':
-			return 'Function()';
-		case 'number':
-			return u.toFixed(4);
-		case 'undefined':
-			return 'undefined';
-		case 'object':
-			return prettyPrint(u, { inlineCharacterLimit: 60 });
-	}
-};
 
 /**
  * Black ANSI code for console printing
