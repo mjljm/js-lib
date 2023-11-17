@@ -5,7 +5,10 @@
  *
  */
 export const kebabize = (str: string) =>
-	str.replace(/[A-Z]+(?![a-z])|[A-Z]/g, ($, ofs) => (ofs ? '-' : '') + $.toLowerCase());
+	str.replace(
+		/[A-Z]+(?![a-z])|[A-Z]/g,
+		($, ofs) => (ofs ? '-' : '') + $.toLowerCase()
+	);
 
 /**
  * Converts date in 'YYYY-MM-DD' format to 'YYYYMMDD' format.
@@ -13,7 +16,8 @@ export const kebabize = (str: string) =>
  * @param s - The string to convert.
  *
  */
-export const isoToYyyymmdd = (s: string) => s.slice(0, 4) + s.slice(5, 7) + s.slice(8, 10);
+export const isoToYyyymmdd = (s: string) =>
+	s.slice(0, 4) + s.slice(5, 7) + s.slice(8, 10);
 
 /**
  * Converts date in 'YYYYMMDD' format 'YYYY-MM-DD' format.
@@ -33,7 +37,9 @@ export const yyyymmdToIso = (s: string) =>
  */
 export const jsonStringifyWithBigint = (u: unknown, bigIntMark = 'n') =>
 	JSON.stringify(u, (_, value) =>
-		typeof value === 'bigint' ? value.toString() + bigIntMark : (value as unknown)
+		typeof value === 'bigint'
+			? value.toString() + bigIntMark
+			: (value as unknown)
 	);
 
 /**
@@ -45,7 +51,10 @@ export const jsonStringifyWithBigint = (u: unknown, bigIntMark = 'n') =>
  */
 export const jsonParseWithBigint = (u: string, bigIntMark = 'n') =>
 	JSON.parse(u, (_, value) => {
-		if (typeof value === 'string' && new RegExp(`^\\d+${bigIntMark}$`).test(value)) {
+		if (
+			typeof value === 'string' &&
+			new RegExp(`^\\d+${bigIntMark}$`).test(value)
+		) {
 			return BigInt(value.substring(0, value.length - bigIntMark.length));
 		}
 		return value as unknown;
