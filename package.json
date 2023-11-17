@@ -8,7 +8,7 @@
 		}
 	},
 	"imports": {
-		"#internal/*": {
+		"#mjljm/js-lib/*": {
 			"import": "./src/*.ts"
 		}
 	},
