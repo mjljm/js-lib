@@ -1,5 +1,11 @@
 {
 	"type": "library",
 	"library": "library",
-	"version": "1.0"
+	"version": "1.0",
+	"access": "public",
+	"description": "",
+	"scripts": [],
+	"devDeps": [],
+	"deps": [],
+	"peerDeps": []
 }
