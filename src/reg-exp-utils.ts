@@ -14,7 +14,7 @@ export const positiveLookAhead = (s: string): string => `(?=${s})`;
 
 export const star = /\*/.source;
 export const dot = /\./.source;
-export const number = /\d+/.source;
+export const number = /[1-9]\d*/.source;
 export const letter = /[A-Za-z]/.source;
 export const slash = /\//.source;
 export const colon = /:/.source;
