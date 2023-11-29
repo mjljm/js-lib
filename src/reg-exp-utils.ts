@@ -11,11 +11,16 @@ export const makeLine = (s: string): string => `^${s}$`;
 export const makeEndOfLine = (s: string): string => `${s}$`;
 export const negativeLookAhead = (s: string): string => `(?!${s})`;
 export const positiveLookAhead = (s: string): string => `(?=${s})`;
+/*export const range = (start: string, end: string): string =>
+	`[${start}-${end}]`;*/
 
-export const star = /\*/.source;
-export const dot = /\./.source;
-export const number = /[1-9]\d*/.source;
+export const escapeRegex = (s: string) =>
+	s.replace(/[/\-\\^$*+?.()|[\]{}]/g, '\\$&');
+
+export const backslash = '\\';
+export const star = backslash + '*';
+export const dot = backslash + '.';
+export const digit = backslash + 'd';
+export const number = either('0', '[1-9]' + zeroOrMore(digit));
 export const letter = /[A-Za-z]/.source;
-export const slash = /\//.source;
-export const colon = /:/.source;
-export const singleQuote = /'/.source;
+export const slash = backslash + '/';
