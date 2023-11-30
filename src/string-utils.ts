@@ -1,3 +1,5 @@
+import { RegExpUtils } from '#mjljm/js-lib/index';
+
 /**
  * Converts camel name to khebab name.
  *
@@ -5,7 +7,10 @@
  *
  */
 export const kebabize = (str: string) =>
-	str.replace(/[A-Z]+(?![a-z])|[A-Z]/g, ($, ofs) => (ofs ? '-' : '') + $.toLowerCase());
+	str.replace(
+		/[A-Z]+(?![a-z])|[A-Z]/g,
+		($, ofs) => (ofs ? '-' : '') + $.toLowerCase()
+	);
 
 /**
  * Converts date in 'YYYY-MM-DD' format to 'YYYYMMDD' format.
@@ -13,7 +18,8 @@ export const kebabize = (str: string) =>
  * @param s - The string to convert.
  *
  */
-export const isoToYyyymmdd = (s: string) => s.slice(0, 4) + s.slice(5, 7) + s.slice(8, 10);
+export const isoToYyyymmdd = (s: string) =>
+	s.slice(0, 4) + s.slice(5, 7) + s.slice(8, 10);
 
 /**
  * Converts date in 'YYYYMMDD' format 'YYYY-MM-DD' format.
@@ -21,7 +27,8 @@ export const isoToYyyymmdd = (s: string) => s.slice(0, 4) + s.slice(5, 7) + s.sl
  * @param s - The string to convert.
  *
  */
-export const yyyymmdToIso = (s: string) => s.slice(0, 4) + '-' + s.slice(4, 6) + '-' + s.slice(6, 8);
+export const yyyymmdToIso = (s: string) =>
+	s.slice(0, 4) + '-' + s.slice(4, 6) + '-' + s.slice(6, 8);
 
 /**
  * Adds a tab at the beginning of each new line in string using lineSep as line separator
@@ -29,4 +36,9 @@ export const yyyymmdToIso = (s: string) => s.slice(0, 4) + '-' + s.slice(4, 6) +
  * @param s The string to tabify
  *
  */
-export const tabify = (s: string) => '\t' + s.replaceAll(/\n/g, '\n\t');
+export const tabify = (s: string, tabChar = '  ') =>
+	tabChar + s.replaceAll(lineBreakRegExp, '$1' + tabChar);
+const lineBreakRegExp = new RegExp(
+	RegExpUtils.capture(RegExpUtils.lineBreak),
+	'g'
+);

@@ -11,6 +11,7 @@ export const makeLine = (s: string): string => `^${s}$`;
 export const makeEndOfLine = (s: string): string => `${s}$`;
 export const negativeLookAhead = (s: string): string => `(?!${s})`;
 export const positiveLookAhead = (s: string): string => `(?=${s})`;
+export const capture = (s: string): string => `(${s})`;
 /*export const range = (start: string, end: string): string =>
 	`[${start}-${end}]`;*/
 
@@ -24,3 +25,6 @@ export const digit = backslash + 'd';
 export const number = either('0', '[1-9]' + zeroOrMore(digit));
 export const letter = /[A-Za-z]/.source;
 export const slash = backslash + '/';
+export const CR = backslash + 'r';
+export const LF = backslash + 'n';
+export const lineBreak = either(optional(CR) + LF, CR);
