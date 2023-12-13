@@ -18,7 +18,11 @@ export const capture = (s: string): string => `(${s})`;
 export const escapeRegex = (s: string) =>
 	s.replace(/[/\-\\^$*+?.()|[\]{}]/g, '\\$&');
 
+export const anyChar = '.';
+export const anythingButDot = '[^.]';
+
 export const backslash = '\\';
+export const dollar = backslash + '$';
 export const star = backslash + '*';
 export const dot = backslash + '.';
 export const digit = backslash + 'd';
