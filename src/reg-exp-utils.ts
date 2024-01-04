@@ -1,12 +1,9 @@
-export const toJson = (regexp: string | RegExp) =>
-	typeof regexp === 'string' ? regexp : regexp.source;
+export const toJson = (regexp: string | RegExp) => (typeof regexp === 'string' ? regexp : regexp.source);
 export const zeroOrMore = (s: string): string => `(?:${s})*`;
 export const oneOrMore = (s: string): string => `(?:${s})+`;
-export const repeatBetween = (s: string, low: string, high = ''): string =>
-	`(?:${s}){${low},${high}}`;
+export const repeatBetween = (s: string, low: string, high = ''): string => `(?:${s}){${low},${high}}`;
 export const optional = (s: string): string => `(?:${s})?`;
-export const either = (...args: ReadonlyArray<string>): string =>
-	`(?:${args.join('|')})`;
+export const either = (...args: Array<string>): string => `(?:${args.join('|')})`;
 export const makeLine = (s: string): string => `^${s}$`;
 export const makeEndOfLine = (s: string): string => `${s}$`;
 export const negativeLookAhead = (s: string): string => `(?!${s})`;
@@ -15,8 +12,7 @@ export const capture = (s: string): string => `(${s})`;
 /*export const range = (start: string, end: string): string =>
 	`[${start}-${end}]`;*/
 
-export const escapeRegex = (s: string) =>
-	s.replace(/[/\-\\^$*+?.()|[\]{}]/g, '\\$&');
+export const escapeRegex = (s: string) => s.replace(/[/\-\\^$*+?.()|[\]{}]/g, '\\$&');
 
 export const anyChar = '.';
 export const anythingButDot = '[^.]';
