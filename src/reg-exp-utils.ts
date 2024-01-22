@@ -1,4 +1,4 @@
-export const toJson = (regexp: string | RegExp) => (typeof regexp === 'string' ? regexp : regexp.source);
+export const toString = (regexp: string | RegExp) => (typeof regexp === 'string' ? regexp : regexp.source);
 export const zeroOrMore = (s: string): string => `(?:${s})*`;
 export const oneOrMore = (s: string): string => `(?:${s})+`;
 export const repeatBetween = (s: string, low: string, high = ''): string => `(?:${s}){${low},${high}}`;

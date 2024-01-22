@@ -1,4 +1,4 @@
-import { RegExpUtils } from '#mjljm/js-lib/index';
+import * as RegExpUtils from '#mjljm/js-lib/reg-exp-utils';
 
 /**
  * Converts camel name to khebab name.
