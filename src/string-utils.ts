@@ -31,5 +31,17 @@ export const yyyymmdToIso = (s: string) => s.slice(0, 4) + '-' + s.slice(4, 6) +
  * @param s The string to tabify
  *
  */
-export const tabify = (tabChar: string) => (s: string) => tabChar + s.replaceAll(lineBreakRegExp, '$1' + tabChar);
-const lineBreakRegExp = new RegExp(RegExpUtils.capture(RegExpUtils.lineBreak), 'g');
+export const tabify =
+	(tabChar: string, count = 1) =>
+	(s: string) =>
+		tabChar.repeat(count) + s.replaceAll(tabifyRegExp, '$1' + tabChar);
+const tabifyRegExp = new RegExp(RegExpUtils.capture(RegExpUtils.lineBreak), 'g');
+
+/**
+ * Returns true if the line contains an eol character
+ *
+ * @param s The string to check
+ *
+ */
+export const isMultiLine = (s: string): boolean => isMultiLineRegExp.test(s);
+const isMultiLineRegExp = new RegExp(RegExpUtils.lineBreak);
