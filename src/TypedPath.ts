@@ -41,20 +41,22 @@ export type TypedPath<L extends PathLinkType, P extends PathPositionType, T exte
 } & { [LinkTypeId]: L } & { [PositionTypeId]: P } & { [TargetTypeId]: T };
 
 export type Path = TypedPath<PathLinkType, PathPositionType, PathTargetType>;
+export type ResolvablePath = TypedPath<PathLinkType, 'absolute' | 'relative', PathTargetType>;
 export type AbsoluteFilePath = TypedPath<PathLinkType, 'absolute', 'file'>;
 export type AbsoluteFolderPath = TypedPath<PathLinkType, 'absolute', 'folder'>;
+export type AbsolutePath = TypedPath<PathLinkType, 'absolute', PathTargetType>;
 export type RelativeFilePath = TypedPath<PathLinkType, 'relative', 'file'>;
 export type RelativeFolderPath = TypedPath<PathLinkType, 'relative', 'folder'>;
+export type RelativePath = TypedPath<PathLinkType, 'relative', PathTargetType>;
+export type ResolvableFilePath = TypedPath<PathLinkType, 'absolute' | 'relative', 'file'>;
+export type ResolvableFolderPath = TypedPath<PathLinkType, 'absolute' | 'relative', 'folder'>;
 export type FilePathFragment = TypedPath<PathLinkType, 'fragment', 'file'>;
 export type FolderPathFragment = TypedPath<PathLinkType, 'fragment', 'folder'>;
 export type RealAbsoluteFilePath = TypedPath<'real', 'absolute', 'file'>;
 export type RealAbsoluteFolderPath = TypedPath<'real', 'absolute', 'folder'>;
-
-export type ResolvableFilePath = TypedPath<PathLinkType, 'absolute' | 'relative', 'file'>;
-export type ResolvableFolderPath = TypedPath<PathLinkType, 'absolute' | 'relative', 'folder'>;
-export type ResolvablePath = TypedPath<PathLinkType, 'absolute' | 'relative', 'file' | 'folder'>;
-export type ResolvableSymbolicPath = TypedPath<'symbolic', 'absolute' | 'relative', 'file' | 'folder'>;
-export type PathFragment = TypedPath<PathLinkType, 'fragment', 'file' | 'folder'>;
+export type ResolvableSymbolicPath = TypedPath<'symbolic', 'absolute' | 'relative', PathTargetType>;
+export type ResolvableRealPath = TypedPath<'real', 'absolute' | 'relative', PathTargetType>;
+export type PathFragment = TypedPath<PathLinkType, 'fragment', PathTargetType>;
 
 /**
  * Utility types
