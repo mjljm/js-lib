@@ -16,8 +16,6 @@ export const escapeRegex = (s: string) => s.replace(/[/\-\\^$*+?.()|[\]{}]/g, '\
 
 export const anyChar = '.';
 export const anythingButDot = '[^.]';
-export const anyWordLetter = '';
-export const anyWord = oneOrMore(anyWordLetter);
 
 export const backslash = '\\';
 export const dollar = backslash + '$';
@@ -28,6 +26,8 @@ export const dot = backslash + '.';
 export const digit = backslash + 'd';
 export const positiveInteger = either('0', '[1-9]' + zeroOrMore(digit));
 export const letter = /[A-Za-z]/.source;
+export const anyWordLetter = backslash + 'w';
+export const anyWord = oneOrMore(anyWordLetter);
 export const slash = backslash + '/';
 export const CR = backslash + 'r';
 export const LF = backslash + 'n';

@@ -19,13 +19,13 @@
 
 const moduleTag = '@mjljm/js-lib/TypedPath/';
 
-const TypeId: unique symbol = Symbol.for(moduleTag + 'TypeId');
+const TypeId = `${moduleTag}TypeId`;
 type TypeId = typeof TypeId;
-const LinkTypeId: unique symbol = Symbol.for(moduleTag + 'LinkTypeId');
+const LinkTypeId = `${moduleTag}LinkTypeId`;
 type LinkTypeId = typeof LinkTypeId;
-const PositionTypeId: unique symbol = Symbol.for(moduleTag + 'PositionTypeId');
+const PositionTypeId = `${moduleTag}PositionTypeId`;
 type PositionTypeId = typeof PositionTypeId;
-const TargetTypeId: unique symbol = Symbol.for(moduleTag + 'TargetTypeId');
+const TargetTypeId = `${moduleTag}TargetTypeId`;
 type TargetTypeId = typeof TargetTypeId;
 
 export type PathLinkType = 'real' | 'symbolic';
