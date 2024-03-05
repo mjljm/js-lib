@@ -1,4 +1,6 @@
+// Move TypedPath to its own library
 export * as TypedPath from '#mjljm/js-lib/TypedPath';
-export * as ANSI from '#mjljm/js-lib/ansi';
-export * as RegExpUtils from '#mjljm/js-lib/reg-exp-utils';
-export * as StringUtils from '#mjljm/js-lib/string-utils';
+export * as JsANSI from '#mjljm/js-lib/ansi';
+export * as JsRegExp from '#mjljm/js-lib/regexp';
+export * as JsString from '#mjljm/js-lib/string';
+export * as JsTypes from '#mjljm/js-lib/types';

@@ -1,4 +1,4 @@
-import * as RegExpUtils from '#mjljm/js-lib/reg-exp-utils';
+import * as JsRegExp from '#mjljm/js-lib/regexp';
 
 /**
  * Converts camel name to khebab name.
@@ -35,7 +35,7 @@ export const tabify =
 	(tabChar: string, count = 1) =>
 	(s: string) =>
 		tabChar.repeat(count) + s.replaceAll(tabifyRegExp, '$1' + tabChar);
-const tabifyRegExp = new RegExp(RegExpUtils.capture(RegExpUtils.lineBreak), 'g');
+const tabifyRegExp = new RegExp(JsRegExp.capture(JsRegExp.lineBreak), 'g');
 
 /**
  * Returns true if the line contains an eol character
@@ -44,4 +44,4 @@ const tabifyRegExp = new RegExp(RegExpUtils.capture(RegExpUtils.lineBreak), 'g')
  *
  */
 export const isMultiLine = (s: string): boolean => isMultiLineRegExp.test(s);
-const isMultiLineRegExp = new RegExp(RegExpUtils.lineBreak);
+const isMultiLineRegExp = new RegExp(JsRegExp.lineBreak);
